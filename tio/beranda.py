@@ -12,7 +12,7 @@ def show():
     st.write("📌 Aplikasi ini bertujuan untuk mengelompokkan persepsi masyarakat terhadap pengembangan pariwisata Geyser Cisolok, menggunakan pendekatan analisis klastering berbasis data survei.")
 
     # Gambar utama
-    image_path = os.path.join("tio", "gambar", "gesyer.jpg")
+    image_path = os.path.join("tio/gambar/gesyer.jpg")
     try:
         image = Image.open(image_path)
         st.image(image, caption='Geyser Cisolok - Potensi Wisata Alam Sukabumi', use_column_width=True)
