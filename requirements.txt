@@ -2,3 +2,9 @@ streamlit
 plotly
 pytz
 streamlit-option-menu
+streamlit
+streamlit-option-menu
+pandas
+matplotlib
+seaborn
+scikit-learn
