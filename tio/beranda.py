@@ -1,9 +1,6 @@
 import streamlit as st
 from PIL import Image
 import pandas as pd
-import os
-import os
-from PIL import Image
 
 def show():
     st.markdown("""
@@ -14,12 +11,9 @@ def show():
     st.write("📌 Aplikasi ini bertujuan untuk mengelompokkan persepsi masyarakat terhadap pengembangan pariwisata Geyser Cisolok, menggunakan pendekatan analisis klastering berbasis data survei.")
 
     # Gambar utama
-    image_path = os.path.join(os.path.dirname(__file__), "gambar", "gesyer.jpg")
-    try:
-        image = Image.open(image_path)
-        st.image(image, caption='Geyser Cisolok - Potensi Wisata Alam Sukabumi', use_column_width=True)
-    except FileNotFoundError:
-        st.warning("❗ Gambar 'gesyer.jpg' tidak ditemukan. Pastikan file tersebut ada di folder 'tio/gambar/'.")
+    image = Image.open("tio/gambar/gesyer.jpg")
+    st.image(image, caption='Geyser Cisolok - Potensi Wisata Alam Sukabumi', use_column_width=True)
+
     # Fitur aplikasi
     st.subheader("✨ Fitur Utama Aplikasi")
     st.markdown("""
@@ -46,8 +40,11 @@ def show():
 
     # Lokasi Peta
     st.subheader("📍 Lokasi Geyser Cisolok di Peta")
+
+    # Titik koordinat geyser Cisolok
     location_data = pd.DataFrame({
-        'lat': [-6.989739],
-        'lon': [106.492126]
+        'lat': [-6.989739],  # Lintang
+        'lon': [106.492126]  # Bujur
     })
+
     st.map(location_data, zoom=12)
